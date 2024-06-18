@@ -26,37 +26,41 @@ session_start();
                 <label for="max"> Valor maximo: </label>
                 <input type="text" id="max" name="max" require>
                 <br>
-                <button name="verify" id="buttom">Draw lots</button>
+                <input type="submit" name="verify" id="buttom" placeholder="Draw lots">
             </form>
 
         </section>
         <article class="result">
             <?php
-            if ($_SESSION['tipo'] == "int") {
-                include_once("result_random.php");
+            if (isset($_SESSION['tipo'])) {
+                if ($_SESSION['tipo'] == "int") {
+                    include_once("result_random.php");
+                }
             }
             ?>
         </article>
         <section>
             <form action="random_number.php?action=float" method="post" id="form">
-                <h2>Número com virgula aleátorio</h2>
+                <h2>Número aleátorio - virgula </h2>
                 <label for="min"> Valor minimo: </label>
                 <input type="text" id="min" name="min" require>
                 <br>
                 <label for="max"> Valor maximo: </label>
                 <input type="text" id="max" name="max" require>
                 <br>
-                <label for="house"> Valor de casas decimais: </label>
+                <label for="house">Casas decimais: </label>
                 <input type="text" id="house" name="house" require>
                 <br>
-                <button name="verify" id="buttom">Draw lots</button>
+                <input type="submit" name="verify" id="buttom" placeholder="Draw lots">
             </form>
 
         </section>
         <article class="result">
             <?php
-            if ($_SESSION['tipo'] == "float") {
-                include_once("result_random.php");
+            if (isset($_SESSION['tipo'])) {
+                if ($_SESSION['tipo'] == "float") {
+                    include_once("result_random.php");
+                }
             }
             ?>
         </article>
