@@ -10,14 +10,21 @@ h2 {
   font-size: 1.7rem;
   padding: 0.3rem;
 }
-section {
+nav {
+  display: flex;
+  margin: 0.5rem;
+  justify-content: space-between;
+  width: 30vw;
+}
+.painel {
   align-items: center;
   background: #30007ef8;
   border: 0.1rem solid #ffffff;
   display: flex;
   border-radius: 1.1rem;
+  flex-flow: wrap column;
   justify-content: center;
-  max-height: 80vh;
+  max-height: 100vh;
   text-align: center;
   width: 25vw;
 }
@@ -47,20 +54,25 @@ section {
   border-radius: 0.5rem;
   color: #000000;
   padding: 0.5rem;
-  max-width: 10em;
+  max-width: 10rem;
 }
-#buttom {
-  background: #cdcdcd;
+
+.button {
+  /* background: #cdcdcd; */
+  border-radius: 0.7rem;
   font-size: 1rem;
   margin: auto auto;
   padding: 0.5rem 0.5rem !important;
   width: 8rem !important;
 }
-#buttom:hover {
+.button:hover {
   background: #3cd804;
   color: #ffffff;
 }
 .result {
-  height: 20vh;
-  margin-top: 1rem;
+  background: #ffffff;
+  border-radius: 0.7rem;
+  height: 10vh;
+  margin: 1rem;
+  width: 15vw;
 }
