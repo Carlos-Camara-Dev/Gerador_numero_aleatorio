@@ -11,7 +11,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="overall_style.css">
+    <link rel="stylesheet" href="../public/assets/css/overall_style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@ session_start();
         <section>
             <section class="painel">
 
-                <form action="random_number.php?action=int" method="post" id="form">
+                <form action="../model/random_number.php?action=int" method="post" id="form">
                     <h2>Número inteiro aleátorio</h2>
                     <label for="min"> Valor minimo: </label>
                     <input type="text" id="min" name="min" require>
@@ -39,19 +39,19 @@ session_start();
                 </form>
                 <article class="result">
                     <?php
-                if (isset($_SESSION['tipo'])) {
-                    if ($_SESSION['tipo'] == "int") {
-                        include_once("result_random.php");
+                    if (isset($_SESSION['tipo'])) {
+                        if ($_SESSION['tipo'] == "int") {
+                            include_once("result_random.php");
+                        }
                     }
-                }
-                ?>
+                    ?>
                 </article>
             </section>
 
         </section>
         <section>
             <section class="painel">
-                <form action="random_number.php?action=float" method="post" id="form">
+                <form action="../model/random_number.php?action=float" method="post" id="form">
                     <h2>Número aleátorio - virgula </h2>
                     <label for="min"> Valor minimo: </label>
                     <input type="text" id="min" name="min" require>
@@ -66,12 +66,12 @@ session_start();
                 </form>
                 <article class="result">
                     <?php
-                if (isset($_SESSION['tipo'])) {
-                    if ($_SESSION['tipo'] == "float") {
-                        include_once("result_random.php");
+                    if (isset($_SESSION['tipo'])) {
+                        if ($_SESSION['tipo'] == "float") {
+                            include_once("result_random.php");
+                        }
                     }
-                }
-                ?>
+                    ?>
                 </article>
             </section>
 
