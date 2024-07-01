@@ -1,20 +1,32 @@
 <?php
 session_start();
 // echo random_float(0, 100, 3);
+require_once("../class/random.php");
 if (isset($_POST['verify'])) {
-    $min = $_POST['min'];
-    $max = $_POST['max'];
-    $house = $_POST['house'];
+    $number_random = new Random(
+        $_POST['min'],
+        $_POST['max'],
+        $_POST['house']
+    );
     $_SESSION['tipo'] = $action = $_GET['action'];
+
 
     if ($action == "float") {
         if ($house <= 20) {
-            $_SESSION['random'] = random_float($min, $max, $house);
+            $_SESSION['random'] = $number_random->decimal_random(
+                $_POST['min'],
+                $_POST['max'],
+                $_POST['house']
+            );
         } else {
             echo "Limite de 20 casas decimais ultrapassado!";
         }
     } elseif ($action == "int") {
-        $_SESSION['random'] = mt_rand($min, $max);
+        $_SESSION['random'] = $number_random->number_random(
+            $_POST['min'],
+            $_POST['max'],
+            $_POST['house']
+        );
     }
     header("location: index.php");
 }
